@@ -84,3 +84,7 @@ jobs:
         with:
           name: paper-${{ fromJSON(steps.determine.outputs.result).pr }}
           path: build/libs/paper-paperclip-*-reobf.jar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
