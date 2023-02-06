@@ -353,7 +353,7 @@ index c021733342c09adb04ce3f675209543f84ac4bda..d137aa95f670aab516e9e08272f33b21
 +                for (ServerPlayer player : this.level.players) {
 +                    Arrays.fill(player.mobCounts, 0);
 +                }
-+                spawnercreature_d = NaturalSpawner.createState(l, this.level.getAllEntities(), this::getFullChunk, null, true);
++                spawnercreature_d = NaturalSpawner.createState(l, this.level.getAllEntities(), this::getFullChunk, new LocalMobCapCalculator(this.chunkMap), true);
 +            } else {
 +                spawnercreature_d = NaturalSpawner.createState(l, this.level.getAllEntities(), this::getFullChunk, this.chunkMap.playerMobDistanceMap == null ? new LocalMobCapCalculator(this.chunkMap) : null, false);
 +            }
